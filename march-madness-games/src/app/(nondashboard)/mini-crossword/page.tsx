@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { getMiniCrosswordGame } from "@/lib/crossword";
+import { getMiniCrosswordGame } from "@/lib/mini-crossword";
 
 type Direction = "across" | "down";
 
@@ -225,29 +225,40 @@ export default function MiniCrosswordPage() {
       (cell) => cell.row === row && cell.col === col,
     );
     if (currentIndex === -1) return;
+
+    // First try to find an empty or incorrect cell
     for (let i = currentIndex + 1; i < wordCells.length; i += 1) {
       const nextCell = wordCells[i];
-      const nextValue = userGrid[nextCell.row][nextCell.col];
+      if (cellStatuses[nextCell.row][nextCell.col] === "correct") continue;
 
+      const nextValue = userGrid[nextCell.row][nextCell.col];
       if (!nextValue) {
         setSelectedCell(nextCell);
         return;
       }
     }
 
-    if (currentIndex + 1 < wordCells.length) {
-      setSelectedCell(wordCells[currentIndex + 1]);
-      return;
+    // Otherwise move to the next non-correct cell
+    for (let i = currentIndex + 1; i < wordCells.length; i += 1) {
+      const nextCell = wordCells[i];
+      if (cellStatuses[nextCell.row][nextCell.col] !== "correct") {
+        setSelectedCell(nextCell);
+        return;
+      }
     }
 
-    setSelectedCell(wordCells[wordCells.length - 1]);
+    // All remaining cells are correct — stay put
+    setSelectedCell(wordCells[Math.min(currentIndex, wordCells.length - 1)]);
   }
 
   function moveSelectionBackward(row: number, col: number) {
     if (direction === "across") {
       let prevCol = col - 1;
       while (prevCol >= 0) {
-        if (!isBlockedCell(row, prevCol)) {
+        if (
+          !isBlockedCell(row, prevCol) &&
+          cellStatuses[row][prevCol] !== "correct"
+        ) {
           setSelectedCell({ row, col: prevCol });
           return;
         }
@@ -258,7 +269,10 @@ export default function MiniCrosswordPage() {
 
     let prevRow = row - 1;
     while (prevRow >= 0) {
-      if (!isBlockedCell(prevRow, col)) {
+      if (
+        !isBlockedCell(prevRow, col) &&
+        cellStatuses[prevRow][col] !== "correct"
+      ) {
         setSelectedCell({ row: prevRow, col });
         return;
       }
@@ -271,6 +285,7 @@ export default function MiniCrosswordPage() {
 
     const { row, col } = selectedCell;
     if (isBlockedCell(row, col)) return;
+    if (cellStatuses[row][col] === "correct") return;
 
     const upper = letter.toUpperCase();
     if (!/^[A-Z]$/.test(upper)) return;
@@ -286,6 +301,11 @@ export default function MiniCrosswordPage() {
 
     if (e.key === "Backspace") {
       e.preventDefault();
+
+      if (cellStatuses[row][col] === "correct") {
+        moveSelectionBackward(row, col);
+        return;
+      }
 
       if (userGrid[row][col]) {
         updateCell(row, col, "");
@@ -361,7 +381,7 @@ export default function MiniCrosswordPage() {
     setMessage(
       allCorrect
         ? "Correct! You solved the puzzle."
-        : "Some entries are incorrect.",
+        : "Some entries are incorrect. Fix the red squares and check again.",
     );
   }
 
@@ -419,7 +439,25 @@ export default function MiniCrosswordPage() {
                   "border-gray-300 bg-white text-black hover:bg-gray-50";
                 let numberColor = "text-gray-500";
 
-                if (status === "correct") {
+                if (isSelected) {
+                  const bg =
+                    status === "correct"
+                      ? "bg-green-100"
+                      : status === "incorrect"
+                        ? "bg-red-100"
+                        : "bg-blue-200";
+                  cellClassName = `border-blue-500 ${bg} text-black ring-1 ring-blue-500`;
+                  numberColor = "text-blue-600/70";
+                } else if (isInHighlightedWord) {
+                  const bg =
+                    status === "correct"
+                      ? "bg-green-100"
+                      : status === "incorrect"
+                        ? "bg-red-100"
+                        : "bg-blue-50";
+                  cellClassName = `border-blue-200 ${bg} text-black`;
+                  numberColor = "text-blue-400/60";
+                } else if (status === "correct") {
                   cellClassName =
                     "border-green-400 bg-green-100 text-black hover:bg-green-100";
                   numberColor = "text-green-600/60";
@@ -427,13 +465,6 @@ export default function MiniCrosswordPage() {
                   cellClassName =
                     "border-red-400 bg-red-100 text-black hover:bg-red-100";
                   numberColor = "text-red-500/60";
-                } else if (isSelected) {
-                  cellClassName = "border-blue-500 bg-blue-200 text-black";
-                  numberColor = "text-blue-600/70";
-                } else if (isInHighlightedWord) {
-                  cellClassName =
-                    "border-blue-200 bg-blue-50 text-black hover:bg-blue-50";
-                  numberColor = "text-blue-400/60";
                 }
 
                 return (
@@ -519,7 +550,7 @@ export default function MiniCrosswordPage() {
         <button
           type="button"
           onClick={checkAnswers}
-          className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:shadow-sky-400/30"
+          className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:cursor-pointer hover:shadow-sky-400/30"
         >
           Check Answers
         </button>
@@ -527,7 +558,7 @@ export default function MiniCrosswordPage() {
         <button
           type="button"
           onClick={resetPuzzle}
-          className="rounded-full border border-[#1e2a45] bg-white/[0.04] px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-gray-300 transition hover:border-sky-400/40 hover:text-sky-300"
+          className="rounded-full border border-[#1e2a45] bg-white/[0.04] px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-gray-300 transition hover:cursor-pointer hover:border-sky-400/40 hover:text-sky-300"
         >
           Reset Puzzle
         </button>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { getPicturePuzzleGame } from "@/lib/picture-puzzle";
 
@@ -121,19 +122,29 @@ export default function PicturePuzzlePage() {
                 {currentRound.clues.map((clue, i) => (
                   <div
                     key={i}
-                    className="relative flex h-32 flex-col items-center justify-center overflow-hidden rounded-xl shadow-lg"
+                    className="relative flex h-40 flex-col items-center justify-center overflow-hidden rounded-xl shadow-lg"
                     style={{ backgroundColor: clue.bgColor }}
                   >
-                    <span className="text-4xl drop-shadow-lg">
-                      {clue.emoji}
-                    </span>
+                    {/* Clue image */}
+                    <Image
+                      src={clue.image}
+                      alt={`Clue ${i + 1}`}
+                      fill
+                      className="object-cover opacity-80"
+                    />
+
+                    {/* Gradient overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+
+                    {/* Text overlay */}
                     {clue.text && (
-                      <span className="mt-1.5 rounded-full bg-black/30 px-3 py-0.5 text-sm font-black text-white backdrop-blur-sm">
+                      <span className="relative z-10 rounded-full bg-black/40 px-3 py-1 text-sm font-black text-white backdrop-blur-sm">
                         {clue.text}
                       </span>
                     )}
-                    {/* Subtle clue number */}
-                    <span className="absolute left-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-black/20 text-[10px] font-bold text-white/60">
+
+                    {/* Clue number */}
+                    <span className="absolute left-2 top-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-black/40 text-[10px] font-bold text-white/80 backdrop-blur-sm">
                       {i + 1}
                     </span>
                   </div>
@@ -156,7 +167,7 @@ export default function PicturePuzzlePage() {
                     <button
                       type="button"
                       onClick={handleSubmit}
-                      className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:shadow-sky-400/30"
+                      className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:cursor-pointer hover:shadow-sky-400/30"
                     >
                       Lock In Guess
                     </button>
@@ -205,7 +216,7 @@ export default function PicturePuzzlePage() {
                     <button
                       type="button"
                       onClick={handleNextRound}
-                      className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:shadow-sky-400/30"
+                      className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:cursor-pointer hover:shadow-sky-400/30"
                     >
                       {isLastRound ? "See Results" : "Next Puzzle"}
                     </button>
@@ -275,14 +286,7 @@ export default function PicturePuzzlePage() {
                       : "bg-red-500/10 text-red-400"
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="flex gap-0.5 text-sm">
-                      {round.clues.map((c, j) => (
-                        <span key={j}>{c.emoji.slice(0, 2)}</span>
-                      ))}
-                    </span>
-                    <span className="truncate">{round.answer}</span>
-                  </div>
+                  <span className="truncate">{round.answer}</span>
                   <span>{results[i] ? "✓" : "✗"}</span>
                 </div>
               ))}
@@ -291,7 +295,7 @@ export default function PicturePuzzlePage() {
             <button
               type="button"
               onClick={resetGame}
-              className="mt-8 rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:shadow-sky-400/30"
+              className="mt-8 rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:cursor-pointer hover:shadow-sky-400/30"
             >
               Play Again
             </button>

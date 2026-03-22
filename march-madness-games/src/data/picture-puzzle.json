@@ -1,15 +1,31 @@
 {
   "id": "picture-puzzle",
   "title": "Picture Puzzle",
-  "description": "Four visual clues, one legendary March Madness moment. Decode the emojis, colors, and numbers to guess the event.",
+  "description": "Four visual clues, one legendary March Madness moment. Decode the images, colors, and numbers to guess the event.",
   "rounds": [
     {
       "id": 1,
       "clues": [
-        { "emoji": "👶🎯", "bgColor": "#dc2626", "text": "" },
-        { "emoji": "🧀", "bgColor": "#b91c1c", "text": "" },
-        { "emoji": "🎂", "bgColor": "#f59e0b", "text": "16" },
-        { "emoji": "🐱", "bgColor": "#1e3a5f", "text": "" }
+        {
+          "image": "/images/baby-face.webp",
+          "bgColor": "#dc2626",
+          "text": ""
+        },
+        {
+          "image": "/images/cheese.jpg",
+          "bgColor": "#b91c1c",
+          "text": ""
+        },
+        {
+          "image": "/images/sixteen.jpg",
+          "bgColor": "#f59e0b",
+          "text": ""
+        },
+        {
+          "image": "/images/wildcat.webp",
+          "bgColor": "#1e3a5f",
+          "text": ""
+        }
       ],
       "answer": "Davidson vs Wisconsin Sweet 16 2008",
       "acceptableAnswers": [
@@ -26,30 +42,26 @@
     {
       "id": 2,
       "clues": [
-        { "emoji": "🐕", "bgColor": "#d4a017", "text": "" },
-        { "emoji": "⚔️", "bgColor": "#1e3a8a", "text": "" },
-        { "emoji": "⬆️", "bgColor": "#dc2626", "text": "16 > 1" },
-        { "emoji": "😱", "bgColor": "#7c3aed", "text": "1st" }
-      ],
-      "answer": "UMBC vs Virginia 2018",
-      "acceptableAnswers": [
-        "umbc vs virginia",
-        "umbc virginia",
-        "umbc beats virginia",
-        "umbc over virginia",
-        "umbc virginia 2018",
-        "16 seed beats 1 seed",
-        "umbc upset virginia"
-      ],
-      "description": "UMBC's Retrievers became the first 16 seed to defeat a 1 seed, stunning Virginia's Cavaliers in the 2018 NCAA Tournament."
-    },
-    {
-      "id": 3,
-      "clues": [
-        { "emoji": "🐱", "bgColor": "#1e3a5f", "text": "" },
-        { "emoji": "🐏", "bgColor": "#7dd3fc", "text": "" },
-        { "emoji": "⏰", "bgColor": "#15803d", "text": "0.0" },
-        { "emoji": "💍", "bgColor": "#f59e0b", "text": "" }
+        {
+          "image": "/picture-puzzle/wildcat-nova.jpg",
+          "bgColor": "#1e3a5f",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/ram.jpg",
+          "bgColor": "#7dd3fc",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/buzzer-clock.jpg",
+          "bgColor": "#15803d",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/championship-ring.jpg",
+          "bgColor": "#f59e0b",
+          "text": ""
+        }
       ],
       "answer": "Villanova vs UNC Championship 2016",
       "acceptableAnswers": [
@@ -66,12 +78,64 @@
       "description": "Kris Jenkins hit a buzzer-beating three to give Villanova's Wildcats the 2016 national championship over UNC's Tar Heels — one of the greatest shots in tournament history."
     },
     {
+      "id": 3,
+      "clues": [
+        {
+          "image": "/images/dog.webp",
+          "bgColor": "#d4a017",
+          "text": ""
+        },
+        {
+          "image": "/images/cavaliers.jpg",
+          "bgColor": "#1e3a8a",
+          "text": ""
+        },
+        {
+          "image": "/images/",
+          "bgColor": "#dc2626",
+          "text": ""
+        },
+        {
+          "image": "/images/shocked.png",
+          "bgColor": "#7c3aed",
+          "text": ""
+        }
+      ],
+      "answer": "UMBC vs Virginia 2018",
+      "acceptableAnswers": [
+        "umbc vs virginia",
+        "umbc virginia",
+        "umbc beats virginia",
+        "umbc over virginia",
+        "umbc virginia 2018",
+        "16 seed beats 1 seed",
+        "umbc upset virginia"
+      ],
+      "description": "UMBC's Retrievers became the first 16 seed to defeat a 1 seed, stunning Virginia's Cavaliers in the 2018 NCAA Tournament."
+    },
+    {
       "id": 4,
       "clues": [
-        { "emoji": "👵📿", "bgColor": "#7f1d1d", "text": "" },
-        { "emoji": "🙏", "bgColor": "#ca8a04", "text": "" },
-        { "emoji": "🏀", "bgColor": "#7f1d1d", "text": "11" },
-        { "emoji": "🏟️", "bgColor": "#ca8a04", "text": "4" }
+        {
+          "image": "/picture-puzzle/sister-jean.jpg",
+          "bgColor": "#7f1d1d",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/prayer-hands.jpg",
+          "bgColor": "#ca8a04",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/basketball-11.jpg",
+          "bgColor": "#7f1d1d",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/stadium.jpg",
+          "bgColor": "#ca8a04",
+          "text": ""
+        }
       ],
       "answer": "Loyola Chicago Final Four 2018",
       "acceptableAnswers": [
@@ -89,10 +153,26 @@
     {
       "id": 5,
       "clues": [
-        { "emoji": "🐺", "bgColor": "#dc2626", "text": "" },
-        { "emoji": "🤗🏃", "bgColor": "#dc2626", "text": "" },
-        { "emoji": "✂️🥅", "bgColor": "#f5f5f5", "text": "" },
-        { "emoji": "🚀", "bgColor": "#1e3a8a", "text": "83" }
+        {
+          "image": "/picture-puzzle/wolf.jpg",
+          "bgColor": "#dc2626",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/hug-run.jpg",
+          "bgColor": "#dc2626",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/cutting-nets.jpg",
+          "bgColor": "#f5f5f5",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/rocket.jpg",
+          "bgColor": "#1e3a8a",
+          "text": ""
+        }
       ],
       "answer": "NC State vs Houston Championship 1983",
       "acceptableAnswers": [
@@ -111,10 +191,26 @@
     {
       "id": 6,
       "clues": [
-        { "emoji": "🐶", "bgColor": "#1e3a5f", "text": "" },
-        { "emoji": "😈", "bgColor": "#1e40af", "text": "" },
-        { "emoji": "🏀", "bgColor": "#f59e0b", "text": "½ court" },
-        { "emoji": "⭕", "bgColor": "#dc2626", "text": "rim out" }
+        {
+          "image": "/picture-puzzle/bulldog.jpg",
+          "bgColor": "#1e3a5f",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/blue-devil.jpg",
+          "bgColor": "#1e40af",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/half-court.jpg",
+          "bgColor": "#f59e0b",
+          "text": ""
+        },
+        {
+          "image": "/picture-puzzle/rim-out.jpg",
+          "bgColor": "#dc2626",
+          "text": ""
+        }
       ],
       "answer": "Butler vs Duke Championship 2010",
       "acceptableAnswers": [

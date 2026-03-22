@@ -10,8 +10,39 @@ import {
 interface SolvedGroup {
   name: string;
   items: string[];
+  revealed: string[];
   difficulty: string;
 }
+
+const DIFFICULTY_COLORS: Record<
+  string,
+  { border: string; bg: string; title: string; text: string }
+> = {
+  "1": {
+    border: "border-yellow-300",
+    bg: "bg-yellow-100",
+    title: "text-yellow-900",
+    text: "text-yellow-800/70",
+  },
+  "2": {
+    border: "border-green-300",
+    bg: "bg-green-100",
+    title: "text-green-900",
+    text: "text-green-800/70",
+  },
+  "3": {
+    border: "border-sky-300",
+    bg: "bg-sky-100",
+    title: "text-sky-900",
+    text: "text-sky-800/70",
+  },
+  "4": {
+    border: "border-purple-300",
+    bg: "bg-purple-100",
+    title: "text-purple-900",
+    text: "text-purple-800/70",
+  },
+};
 
 function MistakeDots({
   remaining,
@@ -99,6 +130,7 @@ export default function ConnectionsPage() {
             {
               name: category.name,
               items: [...category.items],
+              revealed: category.revealed ?? [...category.items],
               difficulty: category.difficulty,
             },
           ]);
@@ -151,11 +183,13 @@ export default function ConnectionsPage() {
     );
 
     if (allSameCategory && firstCategory) {
+      const category = game.categories.find((c) => c.name === firstCategory);
       setSolvedGroups((prev) => [
         ...prev,
         {
           name: firstCategory,
           items: chosenTiles.map((tile) => tile.value),
+          revealed: category?.revealed ?? chosenTiles.map((tile) => tile.value),
           difficulty: chosenTiles[0].difficulty,
         },
       ]);
@@ -234,20 +268,23 @@ export default function ConnectionsPage() {
         {/* ── Solved groups ───────────────────────────────────── */}
         {solvedGroups.length > 0 && (
           <div className="mb-2 space-y-2">
-            {solvedGroups.map((group, index) => (
-              <div
-                key={`${group.name}-${index}`}
-                // ORIG: rounded-lg border border-green-200 bg-green-100 px-4 py-3 text-center
-                className="rounded-lg border border-green-200 bg-green-100 px-4 py-3 text-center transition-all duration-500 ease-out"
-              >
-                <p className="text-sm font-semibold text-green-900">
-                  {group.name}
-                </p>
-                <p className="text-sm text-green-800/70">
-                  {group.items.join(", ")}
-                </p>
-              </div>
-            ))}
+            {solvedGroups.map((group, index) => {
+              const colors =
+                DIFFICULTY_COLORS[group.difficulty] ?? DIFFICULTY_COLORS["1"];
+              return (
+                <div
+                  key={`${group.name}-${index}`}
+                  className={`rounded-lg border px-4 py-3 text-center transition-all duration-500 ease-out ${colors.border} ${colors.bg}`}
+                >
+                  <p className={`text-sm font-semibold ${colors.title}`}>
+                    {group.name}
+                  </p>
+                  <p className={`text-sm ${colors.text}`}>
+                    {group.revealed.join(", ")}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         )}
 

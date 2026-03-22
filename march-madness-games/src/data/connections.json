@@ -6,13 +6,13 @@
   "categories": [
     {
       "name": "Teams That Are Also First Names",
-      "difficulty": "medium",
+      "difficulty": "2",
       "items": ["Siena", "Howard", "Troy", "Virginia"],
       "revealed": ["Siena", "Howard", "Troy", "Virginia"]
     },
     {
       "name": "Teams Mascots That Wear Armor",
-      "difficulty": "medium",
+      "difficulty": "4",
       "items": ["UCF", "Michigan State", "Furman", "Cal Baptist"],
       "revealed": [
         "UCF (Knights)",
@@ -23,7 +23,7 @@
     },
     {
       "name": "UConn Final Four Legends",
-      "difficulty": "medium",
+      "difficulty": "3",
       "items": ["Hamilton", "Napier", "Okafor", "Walker"],
       "revealed": [
         "Rip Hamilton",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Players that Have Iconic March Madness Shots",
-      "difficulty": "hard",
+      "difficulty": "1",
       "items": ["Chalmers", "Jenkins", "Suggs", "Laettner"],
       "revealed": [
         "Mario Chalmers",

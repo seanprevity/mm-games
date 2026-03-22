@@ -1,7 +1,7 @@
 import gameData from "@/data/picture-puzzle.json";
 
 export interface PicturePuzzleClue {
-  emoji: string;
+  image: string;
   bgColor: string;
   text: string;
 }

@@ -1,4 +1,3 @@
-import miniGameData from "@/data/mini-crossword.json";
 import gameData from "@/data/crossword.json";
 
 export interface CrosswordClue {
@@ -12,7 +11,8 @@ export interface CrosswordGame {
   id: string;
   title: string;
   description: string;
-  gridSize: number;
+  rows: number;
+  cols: number;
   cells: string[][];
   clues: {
     across: CrosswordClue[];
@@ -20,10 +20,20 @@ export interface CrosswordGame {
   };
 }
 
-export function getMiniCrosswordGame(): CrosswordGame {
-  return miniGameData as CrosswordGame;
-}
-
 export function getCrosswordGame(): CrosswordGame {
-  return gameData as CrosswordGame;
+  const raw = gameData as Record<string, unknown>;
+  const gridSize = raw.gridSize as number | { rows: number; cols: number };
+
+  let rows: number;
+  let cols: number;
+
+  if (typeof gridSize === "number") {
+    rows = gridSize;
+    cols = gridSize;
+  } else {
+    rows = gridSize.rows;
+    cols = gridSize.cols;
+  }
+
+  return { ...raw, rows, cols } as CrosswordGame;
 }

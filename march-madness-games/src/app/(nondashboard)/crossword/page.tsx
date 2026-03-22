@@ -35,7 +35,7 @@ export default function CrosswordPage() {
   const boardRef = useRef<HTMLDivElement | null>(null);
 
   function isBlockedCell(row: number, col: number) {
-    if (row < 0 || row >= game.gridSize || col < 0 || col >= game.gridSize) {
+    if (row < 0 || row >= game.rows || col < 0 || col >= game.cols) {
       return true;
     }
     return game.cells[row][col] === "#";
@@ -50,30 +50,28 @@ export default function CrosswordPage() {
   function isAcrossStart(row: number, col: number) {
     if (isBlockedCell(row, col)) return false;
     const startsHere = col === 0 || isBlockedCell(row, col - 1);
-    const continuesRight =
-      col + 1 < game.gridSize && !isBlockedCell(row, col + 1);
+    const continuesRight = col + 1 < game.cols && !isBlockedCell(row, col + 1);
     return startsHere && continuesRight;
   }
 
   function isDownStart(row: number, col: number) {
     if (isBlockedCell(row, col)) return false;
     const startsHere = row === 0 || isBlockedCell(row - 1, col);
-    const continuesDown =
-      row + 1 < game.gridSize && !isBlockedCell(row + 1, col);
+    const continuesDown = row + 1 < game.rows && !isBlockedCell(row + 1, col);
     return startsHere && continuesDown;
   }
 
   function supportsAcross(row: number, col: number) {
     if (isBlockedCell(row, col)) return false;
     const hasLeft = col - 1 >= 0 && !isBlockedCell(row, col - 1);
-    const hasRight = col + 1 < game.gridSize && !isBlockedCell(row, col + 1);
+    const hasRight = col + 1 < game.cols && !isBlockedCell(row, col + 1);
     return hasLeft || hasRight;
   }
 
   function supportsDown(row: number, col: number) {
     if (isBlockedCell(row, col)) return false;
     const hasUp = row - 1 >= 0 && !isBlockedCell(row - 1, col);
-    const hasDown = row + 1 < game.gridSize && !isBlockedCell(row + 1, col);
+    const hasDown = row + 1 < game.rows && !isBlockedCell(row + 1, col);
     return hasUp || hasDown;
   }
 
@@ -92,7 +90,7 @@ export default function CrosswordPage() {
     if (downStart && !acrossStart) return "down";
     if (acrossStart && downStart) return "across";
 
-    const hasRight = col + 1 < game.gridSize && !isBlockedCell(row, col + 1);
+    const hasRight = col + 1 < game.cols && !isBlockedCell(row, col + 1);
 
     if (!hasRight && supportsDown(row, col)) {
       return "down";
@@ -113,7 +111,7 @@ export default function CrosswordPage() {
       startCol -= 1;
     }
 
-    while (endCol + 1 < game.gridSize && !isBlockedCell(row, endCol + 1)) {
+    while (endCol + 1 < game.cols && !isBlockedCell(row, endCol + 1)) {
       endCol += 1;
     }
 
@@ -128,7 +126,7 @@ export default function CrosswordPage() {
       startRow -= 1;
     }
 
-    while (endRow + 1 < game.gridSize && !isBlockedCell(endRow + 1, col)) {
+    while (endRow + 1 < game.rows && !isBlockedCell(endRow + 1, col)) {
       endRow += 1;
     }
 
@@ -225,29 +223,40 @@ export default function CrosswordPage() {
       (cell) => cell.row === row && cell.col === col,
     );
     if (currentIndex === -1) return;
+
+    // First try to find an empty or incorrect cell
     for (let i = currentIndex + 1; i < wordCells.length; i += 1) {
       const nextCell = wordCells[i];
-      const nextValue = userGrid[nextCell.row][nextCell.col];
+      if (cellStatuses[nextCell.row][nextCell.col] === "correct") continue;
 
+      const nextValue = userGrid[nextCell.row][nextCell.col];
       if (!nextValue) {
         setSelectedCell(nextCell);
         return;
       }
     }
 
-    if (currentIndex + 1 < wordCells.length) {
-      setSelectedCell(wordCells[currentIndex + 1]);
-      return;
+    // Otherwise move to the next non-correct cell
+    for (let i = currentIndex + 1; i < wordCells.length; i += 1) {
+      const nextCell = wordCells[i];
+      if (cellStatuses[nextCell.row][nextCell.col] !== "correct") {
+        setSelectedCell(nextCell);
+        return;
+      }
     }
 
-    setSelectedCell(wordCells[wordCells.length - 1]);
+    // All remaining cells are correct — stay put
+    setSelectedCell(wordCells[Math.min(currentIndex, wordCells.length - 1)]);
   }
 
   function moveSelectionBackward(row: number, col: number) {
     if (direction === "across") {
       let prevCol = col - 1;
       while (prevCol >= 0) {
-        if (!isBlockedCell(row, prevCol)) {
+        if (
+          !isBlockedCell(row, prevCol) &&
+          cellStatuses[row][prevCol] !== "correct"
+        ) {
           setSelectedCell({ row, col: prevCol });
           return;
         }
@@ -258,7 +267,10 @@ export default function CrosswordPage() {
 
     let prevRow = row - 1;
     while (prevRow >= 0) {
-      if (!isBlockedCell(prevRow, col)) {
+      if (
+        !isBlockedCell(prevRow, col) &&
+        cellStatuses[prevRow][col] !== "correct"
+      ) {
         setSelectedCell({ row: prevRow, col });
         return;
       }
@@ -271,6 +283,7 @@ export default function CrosswordPage() {
 
     const { row, col } = selectedCell;
     if (isBlockedCell(row, col)) return;
+    if (cellStatuses[row][col] === "correct") return;
 
     const upper = letter.toUpperCase();
     if (!/^[A-Z]$/.test(upper)) return;
@@ -286,6 +299,11 @@ export default function CrosswordPage() {
 
     if (e.key === "Backspace") {
       e.preventDefault();
+
+      if (cellStatuses[row][col] === "correct") {
+        moveSelectionBackward(row, col);
+        return;
+      }
 
       if (userGrid[row][col]) {
         updateCell(row, col, "");
@@ -306,7 +324,7 @@ export default function CrosswordPage() {
     if (e.key === "ArrowRight") {
       e.preventDefault();
       setDirection("across");
-      if (col + 1 < game.gridSize && !isBlockedCell(row, col + 1)) {
+      if (col + 1 < game.cols && !isBlockedCell(row, col + 1)) {
         setSelectedCell({ row, col: col + 1 });
       }
       return;
@@ -324,7 +342,7 @@ export default function CrosswordPage() {
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setDirection("down");
-      if (row + 1 < game.gridSize && !isBlockedCell(row + 1, col)) {
+      if (row + 1 < game.rows && !isBlockedCell(row + 1, col)) {
         setSelectedCell({ row: row + 1, col });
       }
       return;
@@ -361,7 +379,7 @@ export default function CrosswordPage() {
     setMessage(
       allCorrect
         ? "Correct! You solved the puzzle."
-        : "Some entries are incorrect.",
+        : "Some entries are incorrect. Fix the red squares and check again.",
     );
   }
 
@@ -393,17 +411,17 @@ export default function CrosswordPage() {
       </section>
 
       {/* ── Board (centered) ─────────────────────────────────── */}
-      <div className="flex justify-center">
+      <div className="flex justify-center overflow-x-auto">
         <div
           ref={boardRef}
-          className="w-fit rounded-2xl border border-gray-200 bg-white p-4 outline-none"
+          className="w-fit rounded-2xl p-2 outline-none"
           tabIndex={0}
           onKeyDown={handleKeyDown}
         >
           <div
-            className="grid gap-1"
+            className="grid gap-[2px]"
             style={{
-              gridTemplateColumns: `repeat(${game.gridSize}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${game.cols}, minmax(0, 1fr))`,
             }}
           >
             {game.cells.map((row, rowIndex) =>
@@ -420,7 +438,27 @@ export default function CrosswordPage() {
                   "border-gray-300 bg-white text-black hover:bg-gray-50";
                 let numberColor = "text-gray-500";
 
-                if (status === "correct") {
+                if (isSelected) {
+                  // Selected cell always gets blue border
+                  const bg =
+                    status === "correct"
+                      ? "bg-green-100"
+                      : status === "incorrect"
+                        ? "bg-red-100"
+                        : "bg-blue-200";
+                  cellClassName = `border-blue-500 ${bg} text-black ring-1 ring-blue-500`;
+                  numberColor = "text-blue-600/70";
+                } else if (isInHighlightedWord) {
+                  // Highlighted word cells get lighter blue border
+                  const bg =
+                    status === "correct"
+                      ? "bg-green-100"
+                      : status === "incorrect"
+                        ? "bg-red-100"
+                        : "bg-blue-50";
+                  cellClassName = `border-blue-200 ${bg} text-black`;
+                  numberColor = "text-blue-400/60";
+                } else if (status === "correct") {
                   cellClassName =
                     "border-green-400 bg-green-100 text-black hover:bg-green-100";
                   numberColor = "text-green-600/60";
@@ -428,13 +466,6 @@ export default function CrosswordPage() {
                   cellClassName =
                     "border-red-400 bg-red-100 text-black hover:bg-red-100";
                   numberColor = "text-red-500/60";
-                } else if (isSelected) {
-                  cellClassName = "border-blue-500 bg-blue-200 text-black";
-                  numberColor = "text-blue-600/70";
-                } else if (isInHighlightedWord) {
-                  cellClassName =
-                    "border-blue-200 bg-blue-50 text-black hover:bg-blue-50";
-                  numberColor = "text-blue-400/60";
                 }
 
                 return (
@@ -443,15 +474,15 @@ export default function CrosswordPage() {
                     type="button"
                     onClick={() => handleCellClick(rowIndex, colIndex)}
                     disabled={isBlocked}
-                    className={`relative flex h-14 w-14 items-center justify-center border text-xl font-bold uppercase transition-colors ${
+                    className={`relative flex h-8 w-8 items-center justify-center text-xs font-bold uppercase transition-colors sm:h-9 sm:w-9 sm:text-sm ${
                       isBlocked
-                        ? "cursor-default border-black bg-black"
-                        : cellClassName
+                        ? "cursor-default border-transparent bg-transparent"
+                        : `border ${cellClassName}`
                     }`}
                   >
                     {!isBlocked && clueNumber && (
                       <span
-                        className={`absolute left-1 top-1 text-[10px] font-semibold ${numberColor}`}
+                        className={`absolute left-[2px] top-[1px] text-[7px] font-semibold leading-none sm:text-[8px] ${numberColor}`}
                       >
                         {clueNumber}
                       </span>
@@ -520,7 +551,7 @@ export default function CrosswordPage() {
         <button
           type="button"
           onClick={checkAnswers}
-          className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:shadow-sky-400/30"
+          className="rounded-full bg-gradient-to-r from-sky-400 to-sky-300 px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-sky-400/20 transition hover:cursor-pointer hover:shadow-sky-400/30"
         >
           Check Answers
         </button>
@@ -528,7 +559,7 @@ export default function CrosswordPage() {
         <button
           type="button"
           onClick={resetPuzzle}
-          className="rounded-full border border-[#1e2a45] bg-white/[0.04] px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-gray-300 transition hover:border-sky-400/40 hover:text-sky-300"
+          className="rounded-full border border-[#1e2a45] bg-white/[0.04] px-7 py-2.5 text-sm font-bold uppercase tracking-wider text-gray-300 transition hover:cursor-pointer hover:border-sky-400/40 hover:text-sky-300"
         >
           Reset Puzzle
         </button>
