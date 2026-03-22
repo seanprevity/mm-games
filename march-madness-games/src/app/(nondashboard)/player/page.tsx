@@ -50,11 +50,11 @@ export default function PlayerPathPage() {
   const hiddenIndices = useMemo(() => {
     const totalStops = currentPlayer.careerPath.length;
 
-    if (totalStops <= 1) return [];
+    if (totalStops <= 2) return [];
 
     return currentPlayer.careerPath
       .map((_, index) => index)
-      .filter((index) => index >= 1);
+      .filter((index) => index >= 2);
   }, [currentPlayer]);
 
   const hiddenIndexSet = new Set(hiddenIndices);
@@ -127,7 +127,7 @@ export default function PlayerPathPage() {
 
   return (
     // ORIG: <div className="space-y-8">
-    <div className="-mx-6 -my-10 min-h-screen space-y-8 bg-[#110f0a] px-6 py-10">
+    <div className="space-y-8">
       {/* ── Header ────────────────────────────────────────────────── */}
       {/* ORIG: <section className="mx-auto max-w-xl space-y-2 text-center"> */}
       <section className="mx-auto max-w-xl space-y-3 text-center">

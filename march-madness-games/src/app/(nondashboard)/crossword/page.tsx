@@ -482,7 +482,7 @@ export default function CrosswordPage() {
                   >
                     {!isBlocked && clueNumber && (
                       <span
-                        className={`absolute left-[2px] top-[1px] text-[7px] font-semibold leading-none sm:text-[8px] ${numberColor}`}
+                        className={`absolute left-[2px] top-[1px] text-[11px] font-semibold leading-none sm:text-[12px] ${numberColor}`}
                       >
                         {clueNumber}
                       </span>

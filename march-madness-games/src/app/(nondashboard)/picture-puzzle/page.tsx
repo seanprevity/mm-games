@@ -122,26 +122,14 @@ export default function PicturePuzzlePage() {
                 {currentRound.clues.map((clue, i) => (
                   <div
                     key={i}
-                    className="relative flex h-40 flex-col items-center justify-center overflow-hidden rounded-xl shadow-lg"
-                    style={{ backgroundColor: clue.bgColor }}
+                    className="relative h-40 overflow-hidden rounded-xl border border-[#1e2a45]"
                   >
-                    {/* Clue image */}
                     <Image
                       src={clue.image}
                       alt={`Clue ${i + 1}`}
                       fill
-                      className="object-cover opacity-80"
+                      className="object-cover"
                     />
-
-                    {/* Gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
-
-                    {/* Text overlay */}
-                    {clue.text && (
-                      <span className="relative z-10 rounded-full bg-black/40 px-3 py-1 text-sm font-black text-white backdrop-blur-sm">
-                        {clue.text}
-                      </span>
-                    )}
 
                     {/* Clue number */}
                     <span className="absolute left-2 top-2 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-black/40 text-[10px] font-bold text-white/80 backdrop-blur-sm">

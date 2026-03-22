@@ -22,7 +22,7 @@
           "text": ""
         },
         {
-          "image": "/images/wildcat.webp",
+          "image": "/images/2008.jpg",
           "bgColor": "#1e3a5f",
           "text": ""
         }
@@ -43,22 +43,22 @@
       "id": 2,
       "clues": [
         {
-          "image": "/picture-puzzle/wildcat-nova.jpg",
+          "image": "/images/v.jpg",
           "bgColor": "#1e3a5f",
           "text": ""
         },
         {
-          "image": "/picture-puzzle/ram.jpg",
+          "image": "/images/bull.jpg",
           "bgColor": "#7dd3fc",
           "text": ""
         },
         {
-          "image": "/picture-puzzle/buzzer-clock.jpg",
+          "image": "/images/ladder.jpg.webp",
           "bgColor": "#15803d",
           "text": ""
         },
         {
-          "image": "/picture-puzzle/championship-ring.jpg",
+          "image": "/images/2016.jpg",
           "bgColor": "#f59e0b",
           "text": ""
         }
