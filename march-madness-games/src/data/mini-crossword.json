@@ -1,0 +1,54 @@
+{
+  "id": "crossword-005",
+  "title": "Mini March Madness Crossword — Tougher Version",
+  "description": "A tougher 5x5 mini crossword themed around March Madness history and tournament terminology.",
+  "gridSize": 5,
+  "cells": [
+    ["R", "E", "B", "S", "#"],
+    ["#", "L", "#", "W", "#"],
+    ["T", "I", "D", "E", "#"],
+    ["#", "T", "#", "E", "#"],
+    ["S", "E", "A", "T", "S"]
+  ],
+  "clues": {
+    "across": [
+      {
+        "number": 1,
+        "row": 0,
+        "col": 0,
+        "answer": "REBS",
+        "clue": "1990 champs, briefly: Runnin' ___"
+      },
+      {
+        "number": 3,
+        "row": 2,
+        "col": 0,
+        "answer": "TIDE",
+        "clue": "2024 Final Four school, in headlines: Crimson ___"
+      },
+      {
+        "number": 5,
+        "row": 4,
+        "col": 0,
+        "answer": "SEATS",
+        "clue": "What fans scramble for at big tournament games"
+      }
+    ],
+    "down": [
+      {
+        "number": 2,
+        "row": 0,
+        "col": 1,
+        "answer": "ELITE",
+        "clue": "As in Eight"
+      },
+      {
+        "number": 4,
+        "row": 0,
+        "col": 3,
+        "answer": "SWEET",
+        "clue": "As in 16"
+      }
+    ]
+  }
+}

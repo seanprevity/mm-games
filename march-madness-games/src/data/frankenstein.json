@@ -1,0 +1,25 @@
+{
+  "id": "frankenstein",
+  "title": "Frankenstein",
+  "description": "Three players, one face. Guess who owns the forehead, eyes, and chin in each mashed-up portrait.",
+  "rounds": [
+    {
+      "id": 1,
+      "topPlayer": {
+        "name": "Cameron Boozer",
+        "team": "Duke",
+        "image": "/frankenstein/cameron-boozer-top.png"
+      },
+      "middlePlayer": {
+        "name": "AJ Dybantsa",
+        "team": "BYU",
+        "image": "/frankenstein/aj-dybantsa-middle.png"
+      },
+      "bottomPlayer": {
+        "name": "Darius Acuff Jr.",
+        "team": "Arkansas",
+        "image": "/frankenstein/darius-acoff-bottom.png"
+      }
+    }
+  ]
+}

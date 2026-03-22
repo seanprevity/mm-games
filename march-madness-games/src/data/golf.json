@@ -1,0 +1,79 @@
+{
+  "id": "height-golf",
+  "title": "Height Golf",
+  "description": "Guess the height of each March Madness player. Every inch off is a stroke. Lowest score wins.",
+  "holes": [
+    {
+      "id": 1,
+      "playerName": "Cameron Boozer",
+      "team": "Duke",
+      "photo": "/players/cameron-boozer.png",
+      "heightInches": 81,
+      "heightDisplay": "6'9\""
+    },
+    {
+      "id": 2,
+      "playerName": "AJ Dybantsa",
+      "team": "BYU",
+      "photo": "/players/aj-dybantsa.png",
+      "heightInches": 81,
+      "heightDisplay": "6'9\""
+    },
+    {
+      "id": 3,
+      "playerName": "Darius Acuff Jr.",
+      "team": "Arkansas",
+      "photo": "/players/darius-acuff.png",
+      "heightInches": 71,
+      "heightDisplay": "5'11\""
+    },
+    {
+      "id": 4,
+      "playerName": "Yaxel Lendeborg",
+      "team": "Michigan",
+      "photo": "/players/yaxel-lendeborg.png",
+      "heightInches": 80,
+      "heightDisplay": "6'8\""
+    },
+    {
+      "id": 5,
+      "playerName": "JT Toppin",
+      "team": "Texas Tech",
+      "photo": "/players/jt-toppin.png",
+      "heightInches": 81,
+      "heightDisplay": "6'9\""
+    },
+    {
+      "id": 6,
+      "playerName": "Tarris Reed Jr.",
+      "team": "UConn",
+      "photo": "/players/tarris-reed.png",
+      "heightInches": 83,
+      "heightDisplay": "6'11\""
+    },
+    {
+      "id": 7,
+      "playerName": "Jeremy Fears Jr.",
+      "team": "Michigan State",
+      "photo": "/players/jeremy-fears.png",
+      "heightInches": 74,
+      "heightDisplay": "6'2\""
+    },
+    {
+      "id": 8,
+      "playerName": "Kingston Flemings",
+      "team": "Houston",
+      "photo": "/players/kingston-flemings.png",
+      "heightInches": 75,
+      "heightDisplay": "6'3\""
+    },
+    {
+      "id": 9,
+      "playerName": "Braden Smith",
+      "team": "Purdue",
+      "photo": "/players/braden-smith.png",
+      "heightInches": 72,
+      "heightDisplay": "6'0\""
+    }
+  ]
+}

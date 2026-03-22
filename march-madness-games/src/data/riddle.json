@@ -1,0 +1,82 @@
+{
+  "id": "riddle",
+  "title": "March Madness Riddle",
+  "description": "Four riddles, one legendary moment. Guess the two teams, the event name, and the year.",
+  "rounds": [
+    {
+      "id": 1,
+      "riddles": {
+        "team1": "This pack of dogs from the Northeast bit their way through the bracket as a massive underdog.",
+        "team2": "These Cavaliers were the top overall seed and had never lost to a 16 before this night.",
+        "event": "The name of this event shares its title with something that happens when favorites fall and brackets shatter.",
+        "year": "This happened the same year the Eagles won their first Super Bowl and Black Panther hit theaters."
+      },
+      "answers": {
+        "team1": "UMBC",
+        "team2": "Virginia",
+        "event": "Upset",
+        "year": "2018"
+      }
+    },
+    {
+      "id": 2,
+      "riddles": {
+        "team1": "This Blue Devil hit a turnaround jumper at the buzzer, cementing his name in tournament lore.",
+        "team2": "These Wildcats from the Bluegrass State were on the wrong end of one of the greatest shots ever.",
+        "event": "This play is named for a shot that beats the clock — when the buzzer sounds and the ball still goes in.",
+        "year": "This happened during a year when the Barcelona Olympics showcased the original Dream Team."
+      },
+      "answers": {
+        "team1": "Duke",
+        "team2": "Kentucky",
+        "event": "Buzzer Beater",
+        "year": "1992"
+      }
+    },
+    {
+      "id": 3,
+      "riddles": {
+        "team1": "These Wildcats from the desert ran a perfect regular season but couldn't finish the job in April.",
+        "team2": "This program from the land of crab cakes and Old Bay pulled off the biggest upset of that tournament.",
+        "event": "This event is named for what happens when one team completes every game without a loss — until they don't.",
+        "year": "The same year Frozen came out and the Seahawks won the Super Bowl in a blowout."
+      },
+      "answers": {
+        "team1": "Wichita State",
+        "team2": "Kentucky",
+        "event": "Undefeated Season Ended",
+        "year": "2014"
+      }
+    },
+    {
+      "id": 4,
+      "riddles": {
+        "team1": "This Jesuit school from Philadelphia became the lowest seed to ever reach the Final Four.",
+        "team2": "These top-seeded Jayhawks were supposed to cruise but got ambushed by a team nobody picked.",
+        "event": "This is what they call a small, overlooked team that goes on a magical run — like a fairy tale character at the ball.",
+        "year": "This was the year Obama was inaugurated for his second term and Harlem Shake went viral."
+      },
+      "answers": {
+        "team1": "Saint Joseph's",
+        "team2": "Kansas",
+        "event": "Cinderella Run",
+        "year": "2013"
+      }
+    },
+    {
+      "id": 5,
+      "riddles": {
+        "team1": "Coach Jim Valvano ran around the court looking for someone to hug after this team's miracle win.",
+        "team2": "These Cougars from Houston were called Phi Slama Jama for their high-flying dunks.",
+        "event": "This championship game ended on a last-second shot that spawned one of sports' most iconic celebrations.",
+        "year": "Return of the Jedi premiered and the internet was still a decade away for most people."
+      },
+      "answers": {
+        "team1": "NC State",
+        "team2": "Houston",
+        "event": "Championship Game",
+        "year": "1983"
+      }
+    }
+  ]
+}

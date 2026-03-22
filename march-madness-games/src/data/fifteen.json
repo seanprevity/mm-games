@@ -1,0 +1,48 @@
+{
+  "id": "fifteen-words-or-less",
+  "title": "15 Words or Less",
+  "description": "Guess all 8 words using only 15 hints total. Choose wisely — each hint costs one from your budget.",
+  "totalHintBudget": 15,
+  "words": [
+    {
+      "id": 1,
+      "answer": "Cinderella",
+      "hints": ["Princess", "Upset", "March", "Slipper", "Butler"]
+    },
+    {
+      "id": 2,
+      "answer": "Gonzaga",
+      "hints": ["Suggs", "Bulldogs", "Washington", "Stockton", "Few"]
+    },
+    {
+      "id": 3,
+      "answer": "Coach K",
+      "hints": ["Duke", "Olympics", "Whiteboard", "Champion", "Army"]
+    },
+    {
+      "id": 4,
+      "answer": "Jim Valvano",
+      "hints": ["Foundation", "Cancer", "NC State", "ESPN", "Coach"]
+    },
+    {
+      "id": 5,
+      "answer": "Kemba Walker",
+      "hints": ["UConn", "Buzzer", "2011", "Bobcats", "Hornets"]
+    },
+    {
+      "id": 6,
+      "answer": "Big East",
+      "hints": ["Conference", "Villanova", "Basketball", "Georgetown", "UConn"]
+    },
+    {
+      "id": 7,
+      "answer": "UMBC",
+      "hints": ["Sixteen", "Seed", "Virginia", "Upset", "Historic"]
+    },
+    {
+      "id": 8,
+      "answer": "5-12 Upset",
+      "hints": ["Trap", "Game", "First", "Round", "Classic"]
+    }
+  ]
+}

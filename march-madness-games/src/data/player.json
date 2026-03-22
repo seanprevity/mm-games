@@ -1,0 +1,71 @@
+{
+  "id": "player-path-001",
+  "title": "Guess the March Madness Legend",
+  "description": "Follow the career path from college to the NBA and guess the player.",
+  "maxGuesses": 3,
+  "players": [
+    {
+      "id": "jack-gohlke",
+      "playerName": "Jack Gohlke",
+      "title": "March Madness Legend",
+      "description": "Guess the player from their college and pro journey.",
+      "hint": "Led Syracuse to a national championship as a freshman.",
+      "careerPath": [
+        {
+          "team": "Hillsdale College",
+          "years": "2019–2023",
+          "logo": "/logos/hillsdale.svg",
+          "type": "Division 2 College"
+        },
+        {
+          "team": "Oakland University",
+          "years": "2023–2024",
+          "logo": "/logos/oakland.svg",
+          "type": "College"
+        },
+        {
+          "team": "Oklahoma City Thunder",
+          "years": "2024 Summer League",
+          "logo": "/logos/oklahoma-city-thunder.png",
+          "type": "nba"
+        },
+        {
+          "team": "KK Podgorica",
+          "years": "2024",
+          "logo": "/logos/kk-podgorica.png",
+          "type": "Montenegrin First League"
+        },
+        {
+          "team": "Wisconsin Herd",
+          "years": "2024-2025",
+          "logo": "/logos/wisconsin-herd.png",
+          "type": "G-League"
+        },
+        {
+          "team": "Motor City Cruise",
+          "years": "2025",
+          "logo": "/logos/motor-city-cruise.svg",
+          "type": "G-League"
+        },
+        {
+          "team": "Angeles de la Ciudad de Mexico",
+          "years": "2025",
+          "logo": "/logos/ciudad.png",
+          "type": "CIBACOPA"
+        },
+        {
+          "team": "Fortaleza Basquete Cearense",
+          "years": "2025-2026",
+          "logo": "/logos/fortaleza.jpg",
+          "type": "Novo Basquete Brasil"
+        },
+        {
+          "team": "Texas Legends",
+          "years": "2026-Present",
+          "logo": "/logos/texas-legends.png",
+          "type": "G-League"
+        }
+      ]
+    }
+  ]
+}

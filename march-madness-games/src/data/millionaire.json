@@ -1,0 +1,245 @@
+{
+  "id": "millionaire-001",
+  "title": "Who Wants to Be a March Madness Millionaire?",
+  "description": "Choose categories, answer March Madness trivia, and climb the prize ladder.",
+  "rounds": [
+    {
+      "id": "round-1",
+      "title": "Round 1",
+      "categories": [
+        {
+          "id": "bracket-basics",
+          "name": "Bracket Basics",
+          "description": "Seeds, brackets, and tournament structure.",
+          "questions": [
+            {
+              "id": 1,
+              "question": "How many number 16 seeds have beaten a number 1 seed?",
+              "answers": {
+                "A": "0",
+                "B": "1",
+                "C": "2",
+                "D": "3"
+              },
+              "correctAnswer": "C",
+              "prize": 100,
+              "askTheCrowd": {
+                "A": 8,
+                "B": 26,
+                "C": 62,
+                "D": 4
+              },
+              "fiftyFifty": ["B", "C"],
+              "phoneAFriend": "C"
+            },
+            {
+              "id": 2,
+              "question": "Who coined the term bracketology?",
+              "answers": {
+                "A": "Joe Lunardi",
+                "B": "Jay Bilas",
+                "C": "Mike Jensen",
+                "D": "Seth Greenberg"
+              },
+              "correctAnswer": "A",
+              "prize": 200,
+              "askTheCrowd": {
+                "A": 72,
+                "B": 11,
+                "C": 9,
+                "D": 8
+              },
+              "fiftyFifty": ["A", "B"],
+              "phoneAFriend": "A"
+            },
+            {
+              "id": 3,
+              "question": "What are the odds of having a perfect bracket?",
+              "answers": {
+                "A": "1 in 120.2 billion",
+                "B": "1 in 9.2 quintillion",
+                "C": "1 in 485.3 trillion",
+                "D": "1 in 5.2 quadrillion"
+              },
+              "correctAnswer": "B",
+              "prize": 300,
+              "askTheCrowd": {
+                "A": 9,
+                "B": 68,
+                "C": 11,
+                "D": 12
+              },
+              "fiftyFifty": ["B", "D"],
+              "phoneAFriend": "B"
+            },
+            {
+              "id": 4,
+              "question": "Who won the inaugural NCAA division 1 men's basketball tournament?",
+              "answers": {
+                "A": "Ohio State",
+                "B": "Duke",
+                "C": "Kentucky",
+                "D": "Oregon"
+              },
+              "correctAnswer": "D",
+              "prize": 300,
+              "askTheCrowd": {
+                "A": 9,
+                "B": 18,
+                "C": 11,
+                "D": 62
+              },
+              "fiftyFifty": ["B", "D"],
+              "phoneAFriend": "D"
+            },
+            {
+              "id": 5,
+              "question": "Only once has there been an elite eight without any number one seeds present, what year was it?",
+              "answers": {
+                "A": "1992",
+                "B": "2003",
+                "C": "1985",
+                "D": "2023"
+              },
+              "correctAnswer": "D",
+              "prize": 500,
+              "askTheCrowd": {
+                "A": 9,
+                "B": 18,
+                "C": 11,
+                "D": 62
+              },
+              "fiftyFifty": ["A", "D"],
+              "phoneAFriend": "D"
+            },
+            {
+              "id": 6,
+              "question": "In what years did all 4 number one seeds make the final four?",
+              "answers": {
+                "A": "2008, 2025",
+                "B": "2008, 2013",
+                "C": "1994, 1989",
+                "D": "1990, 2024"
+              },
+              "correctAnswer": "A",
+              "prize": 600,
+              "askTheCrowd": {
+                "A": 62,
+                "B": 18,
+                "C": 11,
+                "D": 9
+              },
+              "fiftyFifty": ["A", "B"],
+              "phoneAFriend": "A"
+            },
+            {
+              "id": 7,
+              "question": "Who was the last number 6 seed to make the final four?",
+              "answers": {
+                "A": "Saint Johns",
+                "B": "Syracuse",
+                "C": "Villanova",
+                "D": "Michigan"
+              },
+              "correctAnswer": "D",
+              "prize": 700,
+              "askTheCrowd": {
+                "A": 2,
+                "B": 18,
+                "C": 11,
+                "D": 69
+              },
+              "fiftyFifty": ["B", "D"],
+              "phoneAFriend": "D"
+            }
+          ]
+        },
+        {
+          "id": "tournament-rounds",
+          "name": "Tournament Rounds",
+          "description": "How the tournament progresses from round to round.",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "id": "round-2",
+      "title": "Round 2",
+      "categories": [
+        {
+          "id": "cinderella-stories",
+          "name": "Cinderella Stories",
+          "description": "Underdogs, upsets, and March Madness magic.",
+          "questions": [
+            {
+              "id": 7,
+              "question": "What is the common nickname for an unexpectedly successful underdog team in March Madness?",
+              "answers": {
+                "A": "Sleeper",
+                "B": "Wildcat",
+                "C": "Cinderella",
+                "D": "Buzzer"
+              },
+              "correctAnswer": "C",
+              "prize": 500,
+              "askTheCrowd": {
+                "A": 14,
+                "B": 5,
+                "C": 73,
+                "D": 8
+              },
+              "fiftyFifty": ["A", "C"],
+              "phoneAFriend": "C"
+            },
+            {
+              "id": 8,
+              "question": "What term is commonly used when a lower-seeded team beats a higher-seeded team?",
+              "answers": {
+                "A": "Shift",
+                "B": "Upset",
+                "C": "Swing",
+                "D": "Break"
+              },
+              "correctAnswer": "B",
+              "prize": 1000,
+              "askTheCrowd": {
+                "A": 6,
+                "B": 81,
+                "C": 7,
+                "D": 6
+              },
+              "fiftyFifty": ["B", "D"],
+              "phoneAFriend": "B"
+            },
+            {
+              "id": 9,
+              "question": "A team described as being 'on the bubble' is usually what?",
+              "answers": {
+                "A": "Likely a 1-seed",
+                "B": "Close to missing the tournament",
+                "C": "Guaranteed in the field",
+                "D": "Already eliminated"
+              },
+              "correctAnswer": "B",
+              "prize": 2000,
+              "askTheCrowd": {
+                "A": 4,
+                "B": 84,
+                "C": 8,
+                "D": 4
+              },
+              "fiftyFifty": ["B", "C"],
+              "phoneAFriend": "B"
+            }
+          ]
+        },
+        {
+          "id": "programs-and-players",
+          "name": "Programs & Players",
+          "description": "College basketball history, programs, and stars.",
+          "questions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "connections-001",
+  "title": "March Madness Connections",
+  "description": "Group the 16 tiles into 4 March Madness themed categories.",
+  "mistakesAllowed": 4,
+  "categories": [
+    {
+      "name": "Teams That Are Also First Names",
+      "difficulty": "medium",
+      "items": ["Siena", "Howard", "Troy", "Virginia"],
+      "revealed": ["Siena", "Howard", "Troy", "Virginia"]
+    },
+    {
+      "name": "Teams Mascots That Wear Armor",
+      "difficulty": "medium",
+      "items": ["UCF", "Michigan State", "Furman", "Cal Baptist"],
+      "revealed": [
+        "UCF (Knights)",
+        "Michigan State (Spartans)",
+        "Furman (Paladins)",
+        "Cal Baptist (Lancers)"
+      ]
+    },
+    {
+      "name": "UConn Final Four Legends",
+      "difficulty": "medium",
+      "items": ["Hamilton", "Napier", "Okafor", "Walker"],
+      "revealed": [
+        "Rip Hamilton",
+        "Shabazz Napier",
+        "Emeka Okafor",
+        "Kemba Walker"
+      ]
+    },
+    {
+      "name": "Players that Have Iconic March Madness Shots",
+      "difficulty": "hard",
+      "items": ["Chalmers", "Jenkins", "Suggs", "Laettner"],
+      "revealed": [
+        "Mario Chalmers",
+        "Kris Jenkins",
+        "Jalen Suggs",
+        "Christian Laettner"
+      ]
+    }
+  ]
+}

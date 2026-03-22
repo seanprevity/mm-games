@@ -1,0 +1,133 @@
+{
+  "id": "picture-puzzle",
+  "title": "Picture Puzzle",
+  "description": "Four visual clues, one legendary March Madness moment. Decode the emojis, colors, and numbers to guess the event.",
+  "rounds": [
+    {
+      "id": 1,
+      "clues": [
+        { "emoji": "👶🎯", "bgColor": "#dc2626", "text": "" },
+        { "emoji": "🧀", "bgColor": "#b91c1c", "text": "" },
+        { "emoji": "🎂", "bgColor": "#f59e0b", "text": "16" },
+        { "emoji": "🐱", "bgColor": "#1e3a5f", "text": "" }
+      ],
+      "answer": "Davidson vs Wisconsin Sweet 16 2008",
+      "acceptableAnswers": [
+        "davidson vs wisconsin",
+        "davidson wisconsin",
+        "curry davidson",
+        "davidson sweet 16",
+        "steph curry sweet 16",
+        "davidson wisconsin 2008",
+        "curry vs wisconsin"
+      ],
+      "description": "Stephen Curry — the baby-faced assassin — led Davidson's Wildcats past Wisconsin (the cheese state) in the Sweet 16 of the 2008 NCAA Tournament."
+    },
+    {
+      "id": 2,
+      "clues": [
+        { "emoji": "🐕", "bgColor": "#d4a017", "text": "" },
+        { "emoji": "⚔️", "bgColor": "#1e3a8a", "text": "" },
+        { "emoji": "⬆️", "bgColor": "#dc2626", "text": "16 > 1" },
+        { "emoji": "😱", "bgColor": "#7c3aed", "text": "1st" }
+      ],
+      "answer": "UMBC vs Virginia 2018",
+      "acceptableAnswers": [
+        "umbc vs virginia",
+        "umbc virginia",
+        "umbc beats virginia",
+        "umbc over virginia",
+        "umbc virginia 2018",
+        "16 seed beats 1 seed",
+        "umbc upset virginia"
+      ],
+      "description": "UMBC's Retrievers became the first 16 seed to defeat a 1 seed, stunning Virginia's Cavaliers in the 2018 NCAA Tournament."
+    },
+    {
+      "id": 3,
+      "clues": [
+        { "emoji": "🐱", "bgColor": "#1e3a5f", "text": "" },
+        { "emoji": "🐏", "bgColor": "#7dd3fc", "text": "" },
+        { "emoji": "⏰", "bgColor": "#15803d", "text": "0.0" },
+        { "emoji": "💍", "bgColor": "#f59e0b", "text": "" }
+      ],
+      "answer": "Villanova vs UNC Championship 2016",
+      "acceptableAnswers": [
+        "villanova vs unc",
+        "villanova unc",
+        "villanova north carolina",
+        "kris jenkins",
+        "villanova buzzer beater",
+        "villanova championship 2016",
+        "villanova unc 2016",
+        "villanova north carolina 2016",
+        "jenkins buzzer beater"
+      ],
+      "description": "Kris Jenkins hit a buzzer-beating three to give Villanova's Wildcats the 2016 national championship over UNC's Tar Heels — one of the greatest shots in tournament history."
+    },
+    {
+      "id": 4,
+      "clues": [
+        { "emoji": "👵📿", "bgColor": "#7f1d1d", "text": "" },
+        { "emoji": "🙏", "bgColor": "#ca8a04", "text": "" },
+        { "emoji": "🏀", "bgColor": "#7f1d1d", "text": "11" },
+        { "emoji": "🏟️", "bgColor": "#ca8a04", "text": "4" }
+      ],
+      "answer": "Loyola Chicago Final Four 2018",
+      "acceptableAnswers": [
+        "loyola chicago",
+        "loyola final four",
+        "sister jean",
+        "loyola chicago 2018",
+        "loyola sister jean",
+        "loyola ramblers",
+        "loyola final four 2018",
+        "loyola chicago final four"
+      ],
+      "description": "98-year-old Sister Jean and her rosary became the face of Loyola Chicago's magical 2018 run as an 11 seed all the way to the Final Four."
+    },
+    {
+      "id": 5,
+      "clues": [
+        { "emoji": "🐺", "bgColor": "#dc2626", "text": "" },
+        { "emoji": "🤗🏃", "bgColor": "#dc2626", "text": "" },
+        { "emoji": "✂️🥅", "bgColor": "#f5f5f5", "text": "" },
+        { "emoji": "🚀", "bgColor": "#1e3a8a", "text": "83" }
+      ],
+      "answer": "NC State vs Houston Championship 1983",
+      "acceptableAnswers": [
+        "nc state vs houston",
+        "nc state houston",
+        "nc state 1983",
+        "jimmy v",
+        "jim valvano",
+        "nc state championship",
+        "nc state houston 1983",
+        "nc state beats houston",
+        "valvano"
+      ],
+      "description": "NC State's Wolfpack stunned Houston's Phi Slama Jama in the 1983 championship game, and coach Jim Valvano famously ran around the court looking for someone to hug while they cut down the nets."
+    },
+    {
+      "id": 6,
+      "clues": [
+        { "emoji": "🐶", "bgColor": "#1e3a5f", "text": "" },
+        { "emoji": "😈", "bgColor": "#1e40af", "text": "" },
+        { "emoji": "🏀", "bgColor": "#f59e0b", "text": "½ court" },
+        { "emoji": "⭕", "bgColor": "#dc2626", "text": "rim out" }
+      ],
+      "answer": "Butler vs Duke Championship 2010",
+      "acceptableAnswers": [
+        "butler vs duke",
+        "butler duke",
+        "gordon hayward",
+        "hayward half court",
+        "butler duke 2010",
+        "butler championship",
+        "hayward shot",
+        "butler vs duke 2010"
+      ],
+      "description": "Butler's Bulldogs nearly upset Duke's Blue Devils in the 2010 championship game when Gordon Hayward's half-court heave at the buzzer rimmed out — inches from one of the greatest upsets ever."
+    }
+  ]
+}

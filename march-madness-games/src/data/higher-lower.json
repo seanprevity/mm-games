@@ -1,0 +1,151 @@
+{
+  "id": "higher-lower",
+  "title": "Higher or Lower",
+  "description": "Is their NIL valuation higher or lower? Guess correctly to keep your streak alive.",
+  "players": [
+    {
+      "id": 1,
+      "name": "AJ Dybantsa",
+      "team": "BYU",
+      "photo": "/players/aj-dybantsa.png",
+      "nilValue": 4200000,
+      "nilDisplay": "$4.2M"
+    },
+    {
+      "id": 2,
+      "name": "JT Toppin",
+      "team": "Texas Tech",
+      "photo": "/players/jt-toppin.png",
+      "nilValue": 4000000,
+      "nilDisplay": "$4.0M"
+    },
+    {
+      "id": 3,
+      "name": "Cameron Boozer",
+      "team": "Duke",
+      "photo": "/players/cameron-boozer.png",
+      "nilValue": 2200000,
+      "nilDisplay": "$2.2M"
+    },
+    {
+      "id": 4,
+      "name": "Yaxel Lendeborg",
+      "team": "Michigan",
+      "photo": "/players/yaxel-lendeborg.png",
+      "nilValue": 2100000,
+      "nilDisplay": "$2.1M"
+    },
+    {
+      "id": 5,
+      "name": "Caleb Wilson",
+      "team": "North Carolina",
+      "photo": "/players/caleb-wilson.png",
+      "nilValue": 2000000,
+      "nilDisplay": "$2.0M"
+    },
+    {
+      "id": 6,
+      "name": "Jayden Quaintance",
+      "team": "Kentucky",
+      "photo": "/players/jayden-quaintance.png",
+      "nilValue": 1900000,
+      "nilDisplay": "$1.9M"
+    },
+    {
+      "id": 7,
+      "name": "Braden Smith",
+      "team": "Purdue",
+      "photo": "/players/braden-smith.png",
+      "nilValue": 1800000,
+      "nilDisplay": "$1.8M"
+    },
+    {
+      "id": 8,
+      "name": "Darius Acuff Jr.",
+      "team": "Arkansas",
+      "photo": "/players/darius-acuff.png",
+      "nilValue": 1600000,
+      "nilDisplay": "$1.6M"
+    },
+    {
+      "id": 9,
+      "name": "Darryn Peterson",
+      "team": "Kansas",
+      "photo": "/players/darryn-peterson.png",
+      "nilValue": 1500000,
+      "nilDisplay": "$1.5M"
+    },
+    {
+      "id": 10,
+      "name": "Jeremy Fears Jr.",
+      "team": "Michigan State",
+      "photo": "/players/jeremy-fears.png",
+      "nilValue": 1400000,
+      "nilDisplay": "$1.4M"
+    },
+    {
+      "id": 11,
+      "name": "Keaton Wagler",
+      "team": "Illinois",
+      "photo": "/players/keaton-wagler.webp",
+      "nilValue": 1200000,
+      "nilDisplay": "$1.2M"
+    },
+    {
+      "id": 12,
+      "name": "Morez Johnson Jr.",
+      "team": "Michigan",
+      "photo": "/players/morez-johnson.png",
+      "nilValue": 1100000,
+      "nilDisplay": "$1.1M"
+    },
+    {
+      "id": 13,
+      "name": "Kingston Flemings",
+      "team": "Houston",
+      "photo": "/players/kingston-flemings.png",
+      "nilValue": 1000000,
+      "nilDisplay": "$1.0M"
+    },
+    {
+      "id": 14,
+      "name": "Tyler Tanner",
+      "team": "Vanderbilt",
+      "photo": "/players/tyler-tanner.png",
+      "nilValue": 1000000,
+      "nilDisplay": "$1.0M"
+    },
+    {
+      "id": 15,
+      "name": "Chris Cenac Jr.",
+      "team": "Houston",
+      "photo": "/players/chris-cenac.png",
+      "nilValue": 950000,
+      "nilDisplay": "$950K"
+    },
+    {
+      "id": 16,
+      "name": "Mikel Brown Jr.",
+      "team": "Louisville",
+      "photo": "/players/mikel-brown.png",
+      "nilValue": 900000,
+      "nilDisplay": "$900K"
+    },
+    {
+      "id": 17,
+      "name": "Bruce Thornton",
+      "team": "Ohio State",
+      "photo": "/players/bruce-thornton.png",
+      "nilValue": 850000,
+      "nilDisplay": "$850K"
+    },
+    {
+      "id": 18,
+      "name": "Zuby Ejiofor",
+      "team": "St. John's",
+      "photo": "/players/zuby-ejiofor.png",
+      "nilValue": 800000,
+      "nilDisplay": "$800K"
+    }
+  ]
+}
