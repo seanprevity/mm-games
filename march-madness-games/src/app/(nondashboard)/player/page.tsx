@@ -54,7 +54,7 @@ export default function PlayerPathPage() {
 
     return currentPlayer.careerPath
       .map((_, index) => index)
-      .filter((index) => index >= 2);
+      .filter((index) => index >= 1);
   }, [currentPlayer]);
 
   const hiddenIndexSet = new Set(hiddenIndices);
